@@ -1,0 +1,11 @@
+.menu-bar {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    min-height: 100vh;
+    max-width: 20em;
+}
+.shop-filter-list {
+    display: flex;
+    flex-direction: column;
+}
