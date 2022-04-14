@@ -5,6 +5,9 @@
     min-height: 100vh;
     max-width: 20em;
 }
+.menu-bar-banner-container {
+    display: flex;
+}
 .shop-filter-list {
     display: flex;
     flex-direction: column;

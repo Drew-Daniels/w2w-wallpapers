@@ -1,9 +1,11 @@
 // import components
+// react
+import { useState } from 'react';
 // react-router-dom
 import { Outlet, Link } from 'react-router-dom';
 // my components
 import { MenuBar } from './components/MenuBar/MenuBar';
-
+import { Cart } from './components/Cart/Cart';
 // import data
 
 
@@ -30,6 +32,11 @@ import { RiBuilding2Fill as ArchitectureIcon } from 'react-icons/ri';
 import { AiOutlineShoppingCart as CartIcon } from 'react-icons/ai';
 
 function App() {
+
+  const [showCart, setShowCart] = useState(false);
+  const handleShowCart = () => setShowCart(true);
+  const handleHideCart = () => setShowCart(false);
+
 
   class MenuBarItem {
     constructor(name, icon) {
@@ -59,13 +66,23 @@ function App() {
   return (
     <div className='content-container'>
       <div className='content'>
-        <MenuBar routes={routes} shopFilters={shopFilters} cart={cart}/>
+        <MenuBar 
+          showCart={showCart} 
+          handleShowCart={handleShowCart} 
+          routes={routes} 
+          shopFilters={shopFilters} 
+          cart={cart}
+        />
         {/* 
           Either Home, Items, or Item will be rendered here 
           Use context object on Outlet to send state, state methods you want referenced in the destination URL
         */}
         <Outlet 
-        // context={state items, methods, etc here}
+          // context={{}}
+        />
+        <Cart 
+          showCart={showCart}
+          handleHideCart={handleHideCart}
         />
       </div>
     </div>

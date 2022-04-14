@@ -1,12 +1,14 @@
 // import components
-// react
-import { useState } from 'react';
 // react-router-dom
-import { createSearchParams, Link, useNavigate, useSearchParams } from 'react-router-dom';
+import { createSearchParams, Link, useNavigate, useOutletContext } from 'react-router-dom';
 // react-bootstrap
 import { ButtonGroup, Button } from 'react-bootstrap';
 // my components
 
+// import icons
+// react-icons
+import { IconContext } from 'react-icons';
+import { MdWallpaper as W2WIcon } from 'react-icons/md';
 
 // import styling
 // my styling
@@ -14,13 +16,18 @@ import './MenuBar.css';
 
 export function MenuBar(props) {
 
-    const { routes, shopFilters, cart } = props;
-    const [searchParams, setSearchParams] = useSearchParams();
+    const { showCart, handleShowCart, routes, shopFilters, cart } = props;
     const navigate = useNavigate();
-    const [cartHidden, setCartHidden] = useState(true);
 
     return (
         <div className='menu-bar'>
+            {/* Brand Image and Name */}
+            <div className='menu-bar-banner-container'>
+                <IconContext.Provider value={{}}>
+                    <W2WIcon />
+                </IconContext.Provider>
+                <span>Wall-to-Wall Wallpapers</span>
+            </div>
             {/* Routes */}
             <hr />
             <ul className='route-list'>
@@ -62,7 +69,7 @@ export function MenuBar(props) {
             </ButtonGroup>
             {/* Cart */}
             <hr />
-            <Button onClick={cartHiddenStatus => {setCartHidden(!cartHiddenStatus)}}>
+            <Button onClick={handleShowCart} >
                 <cart.icon />
                 <span>{cart.getDisplayName()}</span>
             </Button>
