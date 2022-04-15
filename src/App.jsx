@@ -12,16 +12,18 @@ import { Cart } from './components/Cart/Cart';
 // import styling
 // reset
 
-// react-bootstrap
-import 'bootstrap/dist/css/bootstrap.min.css';
-// my styling
-import './App.css';
+// // react-bootstrap
+// import 'bootstrap/dist/css/bootstrap.min.css';
+// // my styling
+// import './App.css';
+import './App.scss';
 
 // import ICONS
 // react-icons
 // for routes
 import { AiOutlineHome as HomeIcon } from 'react-icons/ai';
 import { AiOutlineShopping as ShopIcon } from 'react-icons/ai';
+import { MdWallpaper as AppIcon } from 'react-icons/md';
 // for shop filters
 import { GiMoonOrbit as SpaceIcon } from 'react-icons/gi';
 import { GiSittingDog as AnimalsIcon } from 'react-icons/gi';

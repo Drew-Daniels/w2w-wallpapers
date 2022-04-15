@@ -22,32 +22,30 @@ export function MenuBar(props) {
     return (
         <div className='menu-bar'>
             {/* Brand Image and Name */}
-            <div className='menu-bar-banner-container'>
-                <IconContext.Provider value={{}}>
+            <div className='container d-flex flex-column'>
+                <IconContext.Provider value={{ size: '4em' }}>
                     <W2WIcon />
                 </IconContext.Provider>
-                <span>Wall-to-Wall Wallpapers</span>
+                <h1>W2W Wallpapers</h1>
             </div>
             {/* Routes */}
             <hr />
-            <ul className='route-list'>
+            <ButtonGroup className='route-list'>
                 {routes.map((route, i) => {
                     return (
-                        <li key={i} className='route-list-item'>
-                            <Link
-                                to={route.name==='home' ? '/': route.name}
-                                className='menu-bar-item-link'
-                            >
-                                <route.icon />
-                                <span className='menu-bar-item-text'>{route.getDisplayName()}</span>
-                            </Link>
-                        </li>
+                        <Link
+                            to={route.name==='home' ? '/': route.name}
+                            className='menu-bar-item-link btn btn-primary'
+                        >
+                            <route.icon />
+                            <span className='menu-bar-item-text'>{route.getDisplayName()}</span>
+                        </Link>
                     )
                 })}
-            </ul>
+            </ButtonGroup>
             {/* Shop Filters */}
             <hr />
-            <ButtonGroup className='shop-filter-list'>
+            <ButtonGroup className='d-flex flex-column'>
                 {shopFilters.map((shopFilter, i) => {
                     return (
                         <Button 
@@ -61,8 +59,10 @@ export function MenuBar(props) {
                                 });
                             }}
                         >
-                            <shopFilter.icon />
-                            <span className='shop-filter-list-item-button-text'>{shopFilter.getDisplayName()}</span>
+                            <IconContext.Provider value={{ size: '2em' }}>
+                                <shopFilter.icon className='shop-filter-icon' />
+                            </IconContext.Provider>
+                            <span>{shopFilter.getDisplayName()}</span>
                         </Button>
                     )
                 })}

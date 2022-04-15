@@ -4,11 +4,8 @@
     flex-grow: 1;
     min-height: 100vh;
     max-width: 20em;
+    padding: 0 1em;
 }
-.menu-bar-banner-container {
-    display: flex;
-}
-.shop-filter-list {
-    display: flex;
-    flex-direction: column;
+.shop-filter-icon {
+    margin-right: 1em;
 }
