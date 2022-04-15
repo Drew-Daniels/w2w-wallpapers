@@ -1,0 +1,8 @@
+.items {
+    display: flex;
+    flex-wrap: wrap;
+}
+.item-image {
+    height: 200px;
+    width: auto;
+}

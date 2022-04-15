@@ -7,15 +7,10 @@ import { Outlet, Link } from 'react-router-dom';
 import { MenuBar } from './components/MenuBar/MenuBar';
 import { Cart } from './components/Cart/Cart';
 // import data
-
+import data from './data';
 
 // import styling
-// reset
-
-// // react-bootstrap
-// import 'bootstrap/dist/css/bootstrap.min.css';
-// // my styling
-// import './App.css';
+// my styling
 import './App.scss';
 
 // import ICONS
@@ -80,7 +75,9 @@ function App() {
           Use context object on Outlet to send state, state methods you want referenced in the destination URL
         */}
         <Outlet 
-          // context={{}}
+          context={{
+            shopItems: data,
+          }}
         />
         <Cart 
           showCart={showCart}

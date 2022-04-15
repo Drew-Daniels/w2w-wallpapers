@@ -37,7 +37,9 @@ export function MenuBar(props) {
                             to={route.name==='home' ? '/': route.name}
                             className='menu-bar-item-link btn btn-primary'
                         >
-                            <route.icon />
+                            <IconContext.Provider value={{ size: '2em' }}>
+                                <route.icon className='menu-item-icon'/>
+                            </IconContext.Provider>
                             <span className='menu-bar-item-text'>{route.getDisplayName()}</span>
                         </Link>
                     )
@@ -60,7 +62,7 @@ export function MenuBar(props) {
                             }}
                         >
                             <IconContext.Provider value={{ size: '2em' }}>
-                                <shopFilter.icon className='shop-filter-icon' />
+                                <shopFilter.icon className='menu-item-icon' />
                             </IconContext.Provider>
                             <span>{shopFilter.getDisplayName()}</span>
                         </Button>
