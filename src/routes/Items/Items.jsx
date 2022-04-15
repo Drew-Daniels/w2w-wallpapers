@@ -42,28 +42,22 @@ export function Items(props) {
                         return (
                             <li key={i} className='item'>
                                 <Card>
-                                    <Link
-                                        to={shopItem.id}
-                                        className='d-flex justify-content-center'
-                                    >
+                                    <div className='image-container'>
                                         <Card.Img src={shopItem.imgURL} className='item-image' loading='lazy' />
-                                    </Link>
+                                    </div> 
                                     <Card.Body>
                                         <Card.Title>{shopItem.brandName}</Card.Title>
                                         {/* <Card.Text>{shopItem.brandURL}</Card.Text> */}
                                         <div className='d-flex flex-column'>
-                                            {/* <Link
-                                                to={shopItem.brandURL}
-                                            >
-                                                {shopItem.brandURL}
-                                            </Link> */}
                                             <a href={shopItem.brandURL}>{shopItem.brandURL}</a>
                                             <ButtonGroup>
                                                 <Button>
-                                                    <DecrCartIcon />
+                                                    <IconContext.Provider value={{ size: '2em' }}>
+                                                        <DecrCartIcon className='cart-icon'/>
+                                                    </IconContext.Provider>
                                                     <span>Remove from Cart</span>
                                                 </Button>
-                                                <input value={shopItem.qty}></input>
+                                                <input value={shopItem.cartQty}></input>
                                                 <Button>
                                                     <IconContext.Provider value={{ size: '2em' }}>
                                                         <IncrCartIcon className='cart-icon'/>

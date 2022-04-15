@@ -5,8 +5,15 @@
     display: flex;
     flex-wrap: wrap;
 }
+.image-container {
+    display: flex;
+    justify-content: center;
+}
 .item-image {
     height: 75%;
     width: 75%;
     padding: 1em;
+}
+.cart-icon {
+    margin-right: 1em;
 }
