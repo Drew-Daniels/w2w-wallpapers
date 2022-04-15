@@ -1,9 +1,9 @@
 .menu-bar {
     display: flex;
     flex-direction: column;
-    flex-grow: 1;
+    flex: 0 0 auto;
     min-height: 100vh;
-    max-width: 20em;
+    width: 20em;
     padding: 0 1em;
 }
 .menu-item-icon {

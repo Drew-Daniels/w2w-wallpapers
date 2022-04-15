@@ -1,8 +1,12 @@
+.items-container {
+    padding: 0 2em;
+}
 .items {
     display: flex;
     flex-wrap: wrap;
 }
 .item-image {
-    height: 200px;
-    width: auto;
+    height: 75%;
+    width: 75%;
+    padding: 1em;
 }

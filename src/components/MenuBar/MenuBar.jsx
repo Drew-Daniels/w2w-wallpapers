@@ -30,10 +30,11 @@ export function MenuBar(props) {
             </div>
             {/* Routes */}
             <hr />
-            <ButtonGroup className='route-list'>
+            <ButtonGroup className='d-flex flex-column'>
                 {routes.map((route, i) => {
                     return (
                         <Link
+                            key={i}
                             to={route.name==='home' ? '/': route.name}
                             className='menu-bar-item-link btn btn-primary'
                         >
@@ -72,7 +73,9 @@ export function MenuBar(props) {
             {/* Cart */}
             <hr />
             <Button onClick={handleShowCart} >
-                <cart.icon />
+                <IconContext.Provider value={{ size: '2em' }}>
+                    <cart.icon className='menu-item-icon' />
+                </IconContext.Provider>
                 <span>{cart.getDisplayName()}</span>
             </Button>
         </div>
