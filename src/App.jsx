@@ -10,7 +10,7 @@ import { MenuBar } from './components/MenuBar/MenuBar';
 import { Cart } from './components/Cart/Cart';
 import { Footer } from './components/Footer/Footer';
 // import data
-import data from './data';
+import { shopData, siteReviews } from './data';
 
 // import styling
 // my styling
@@ -33,7 +33,7 @@ import { AiOutlineShoppingCart as CartIcon } from 'react-icons/ai';
 
 function App() {
 
-  const [shopItems, setShopItems] = useState(data);
+  const [shopItems, setShopItems] = useState(shopData);
   const [showCart, setShowCart] = useState(false);
   const handleShowCart = () => setShowCart(true);
   const handleHideCart = () => setShowCart(false);
@@ -51,7 +51,6 @@ function App() {
 
   const routes = [
     new MenuBarItem('home', HomeIcon),
-    // new MenuBarItem('shop', ShopIcon),
   ];
 
   const shopFilters = [

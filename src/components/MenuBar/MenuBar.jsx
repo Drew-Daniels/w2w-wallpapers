@@ -44,7 +44,7 @@ export function MenuBar(props) {
                     </IconContext.Provider>
                 </Col>
                 <Col className='d-flex align-items-center'>
-                    <span>Wall to Wall Wallpapers</span>
+                    <h1 className='menu-header'>Wall-to-Wall Wallpapers</h1>
                 </Col>
             </Row>
             {/* Routes */}

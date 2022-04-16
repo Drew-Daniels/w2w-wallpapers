@@ -6,7 +6,7 @@ import ReactDOM from 'react-dom/client';
 import { Routes, Route, BrowserRouter } from 'react-router-dom';
 // my components
 import App from './App';
-import { Browser } from './routes/Browser/Browser'
+import { SiteReviews } from './routes/SiteReviews/SiteReviews'
 import {Items} from './routes/Items/Items';
 import {Item} from './routes/Item/Item';
 // import styling
@@ -18,7 +18,7 @@ root.render(
     <BrowserRouter>
       <Routes>
         <Route path ='/' element={<App /> }>
-          <Route index element={<Browser />} />
+          <Route index element={<SiteReviews />} />
           <Route path='shop' element ={<Items />} />
           <Route path='shop/:id' element={<Item /> }/>
         </Route>

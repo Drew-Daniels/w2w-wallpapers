@@ -1,3 +1,6 @@
+// import helper modules
+import { DateTime } from 'luxon';
+
 // Space
 import AndyHolmes from './images/wallpapers/andy-holmes.jpg';
 import GuillermoFerla from './images/wallpapers/guillermo-ferla.jpg';
@@ -42,7 +45,15 @@ class ShopItem {
     }
 }
 
-const data = [
+class SiteReview {
+    constructor(review, reviewer, time) {
+        this.review = review;
+        this.reviewer = reviewer;
+        this.time = time;
+    }
+}
+
+const shopData = [
     // SPACE
     new ShopItem(
             AndyHolmes,
@@ -309,6 +320,27 @@ const data = [
         9.99,
         20,
     ),
+];
+
+const siteReviews = [
+    new SiteReview(
+        'Awesome site, more awesome prices',
+        "@WallsR4Wallpapers",
+        DateTime.now().minus({weeks: 2}).toLocaleString(DateTime.DATETIME_FULL),
+    ),
+    new SiteReview(
+        "I can't buy too many wallpapers from here!",
+        "@WallpaperFanatic",
+        DateTime.now().minus({days: 3}).toLocaleString(DateTime.DATETIME_FULL),
+    ),
+    new SiteReview(
+        "The site that just keeps giving - wallpapers!",
+        "@Wallie",
+        DateTime.now().minus({months: 4}).toLocaleString(DateTime.DATETIME_FULL),
+    ),
 ]
 
-export default data;
+export {
+    shopData,
+    siteReviews,
+}
