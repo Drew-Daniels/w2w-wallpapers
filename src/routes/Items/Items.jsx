@@ -22,14 +22,12 @@ export function Items(props) {
     }
 
     return (
-        <Container fluid className='mt-2'>
-            <ul className='items'>
-                {shopItems
-                    .filter((shopItem) => matchesSearchParams(shopItem, 'category'))
-                    .map((shopItem, i) => {
-                        return (<Item shopItem={shopItem} setShopItems={setShopItems} />)
-                })}
-            </ul>
+        <Container fluid className='mt-2 d-flex flex-column'>
+            {shopItems
+                .filter((shopItem) => matchesSearchParams(shopItem, 'category'))
+                .map((shopItem, i) => {
+                    return (<Item shopItem={shopItem} setShopItems={setShopItems} />)
+            })}
         </Container>
     )
 }

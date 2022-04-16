@@ -1,10 +1,12 @@
+// override bootstrap css rules here
+$theme-colors: (
+    'primary': rgb(13, 110, 253),
+
+    'space': rgb(33, 37, 41),
+    'animals': rgb(13, 202, 240),
+    'nature':  rgb(25, 135, 84),
+    'minimalist': rgb(108, 117, 125),
+    'architecture': rgb(214, 66, 243),
+);
 // import here
 @import "~bootstrap/scss/bootstrap";
-
-// override bootstrap css rules here
-.card {
-    margin-bottom: 1em;
-}
-.btn.btn-primary {
-    border-radius: .25em;
-}

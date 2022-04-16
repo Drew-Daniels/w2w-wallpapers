@@ -1,6 +1,8 @@
 // import components
 // react
 import { useEffect, useState } from 'react';
+// react-bootstrap
+import { Container, Badge } from 'react-bootstrap';
 // react-icons components
 import {  IconContext } from 'react-icons';
 // import icons
@@ -43,11 +45,14 @@ export function Item(props) {
     }
 
     return (
-        <li className='item'>
+        <Container className='item'>
             <Card>
+                <Card.Header>
+                    <Badge pill bg={shopItem.category}>{shopItem.category[0].toUpperCase() + shopItem.category.slice(1)}</Badge>
+                </Card.Header>
                 <div>
                     {loading &&
-                        <div>
+                        <div className='d-flex justify-content-center align-items-center'>
                             <Spinner animation="grow" variant="primary" />
                         </div>
                     }
@@ -61,24 +66,22 @@ export function Item(props) {
                     <Card.Title>{shopItem.brandName}</Card.Title>
                     <div className='d-flex flex-column'>
                         <a href={shopItem.brandURL}>{shopItem.brandURL}</a>
-                        <ButtonGroup>
+                        <Container className='d-flex justify-content-center mt-2'>
                             <Button onClick={handleCartDecr}>
-                                <IconContext.Provider value={{ size: '2em' }}>
-                                    <DecrCartIcon className='cart-icon'/>
+                                <IconContext.Provider value={{ size: '1em' }}>
+                                    <DecrCartIcon />
                                 </IconContext.Provider>
-                                <span>Remove from Cart</span>
                             </Button>
-                            <input value={shopItem.cartQty} style={{ textAlign: 'center'}}></input>
-                            <Button onClick={handleCartIncr}>
-                                <IconContext.Provider value={{ size: '2em' }}>
-                                    <IncrCartIcon className='cart-icon'/>
+                            <input value={shopItem.cartQty} style={{ textAlign: 'center', width: '4em'}}></input>
+                            <Button onClick={handleCartIncr} >
+                                <IconContext.Provider value={{ size: '1em' }}>
+                                    <IncrCartIcon />
                                 </IconContext.Provider>
-                                <span>Add to Cart</span>
                             </Button>
-                        </ButtonGroup>
+                        </Container>
                     </div>
                 </Card.Body>
             </Card>
-        </li>
+        </Container>
     )
 }
