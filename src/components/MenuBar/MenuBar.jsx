@@ -80,7 +80,8 @@ export function MenuBar(props) {
                     <Button 
                         className='mb-1'
                         onClick={() => {
-                            navigate('shop')
+                            navigate('shop');
+                            document.documentElement.scrollTop=0;
                         }}>
                         <Row>
                             <Col className='d-flex align-items-center justify-content-center' sm={12} md={6} >
@@ -105,6 +106,7 @@ export function MenuBar(props) {
                                             category: shopFilter.name
                                         }).toString()
                                     });
+                                    document.documentElement.scrollTop=0;
                                 }}
                             >
                                 <Row>
