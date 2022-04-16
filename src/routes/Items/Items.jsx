@@ -22,7 +22,7 @@ export function Items(props) {
     }
 
     return (
-        <Container className='items-container'>
+        <Container fluid className='mt-2'>
             <ul className='items'>
                 {shopItems
                     .filter((shopItem) => matchesSearchParams(shopItem, 'category'))

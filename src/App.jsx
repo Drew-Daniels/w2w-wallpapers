@@ -65,10 +65,10 @@ function App() {
   const cart = new MenuBarItem('cart', CartIcon);
 
   return (
-    <Container className='content-container'>
+    <Container fluid className='content-container'>
       <Container className='d-flex flex-column'>
         <Row>
-          <Col>
+          <Col md={3}>
             <MenuBar 
               showCart={showCart} 
               handleShowCart={handleShowCart} 

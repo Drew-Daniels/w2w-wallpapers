@@ -35,7 +35,7 @@ export function MenuBar(props) {
     }
 
     return (
-        <Container className='menu-bar'>
+        <Container className='d-flex flex-column sticky-top mb-3'>
             {/* Brand Image and Name */}
             <Row>
                 <Col>
@@ -50,7 +50,7 @@ export function MenuBar(props) {
             {/* Routes */}
             <hr />
             <Row className='d-flex flex-column'>
-                <ButtonGroup >
+                <ButtonGroup vertical>
                     {routes.map((route, i) => {
                         return (
                             <Link
@@ -58,10 +58,16 @@ export function MenuBar(props) {
                                 to={route.name==='home' ? '/': route.name}
                                 className='menu-bar-item-link btn btn-primary'
                             >
-                                <IconContext.Provider value={{ size: '2em' }}>
-                                    <route.icon className='menu-item-icon'/>
-                                </IconContext.Provider>
-                                <span className='menu-bar-item-text'>{route.getDisplayName()}</span>
+                                <Row>
+                                    <Col className='d-flex align-items-center justify-content-center' sm={12} md={6} >
+                                        <IconContext.Provider value={{ size: '2em' }}>
+                                            <route.icon className='menu-item-icon'/>
+                                        </IconContext.Provider>
+                                    </Col>
+                                    <Col className='d-flex align-items-center justify-content-center' sm={12} md={6} >
+                                        <span className='menu-bar-item-text'>{route.getDisplayName()}</span>
+                                    </Col>
+                                </Row>
                             </Link>
                         )
                     })}
@@ -70,19 +76,27 @@ export function MenuBar(props) {
             {/* Shop Filters */}
             <hr />
             <Row>
-                <ButtonGroup className='d-flex flex-column'>
-                    <Button onClick={() => {
-                        navigate('shop')
-                    }}>
-                        <IconContext.Provider value={{ size: '2em' }}>
-                            <ShopAllIcon className='menu-item-icon' />
-                        </IconContext.Provider>
-                        <span>Shop All</span>
+                <ButtonGroup vertical>
+                    <Button 
+                        className='mb-1'
+                        onClick={() => {
+                            navigate('shop')
+                        }}>
+                        <Row>
+                            <Col className='d-flex align-items-center justify-content-center' sm={12} md={6} >
+                                <IconContext.Provider value={{ size: '2em' }}>
+                                    <ShopAllIcon className='menu-item-icon' />
+                                </IconContext.Provider>
+                            </Col>
+                            <Col className='d-flex align-items-center justify-content-center' sm={12} md={6} >
+                                <span>Shop All</span>
+                            </Col>
+                        </Row>
                     </Button>
-                    <hr />
                     {shopFilters.map((shopFilter, i) => {
                         return (
                             <Button
+                                className='mb-1'
                                 key={i} 
                                 onClick={() => {
                                     navigate({
@@ -93,10 +107,16 @@ export function MenuBar(props) {
                                     });
                                 }}
                             >
-                                <IconContext.Provider value={{ size: '2em' }}>
-                                    <shopFilter.icon className='menu-item-icon' />
-                                </IconContext.Provider>
-                                <span>{'Shop ' + shopFilter.getDisplayName()}</span>
+                                <Row>
+                                    <Col className='d-flex align-items-center justify-content-center' sm={12} md={6}>
+                                        <IconContext.Provider value={{ size: '2em' }}>
+                                            <shopFilter.icon />
+                                        </IconContext.Provider>
+                                    </Col>
+                                    <Col className='d-flex align-items-center justify-content-center' sm={12} md={6}>
+                                        <span >{'Shop ' + shopFilter.getDisplayName()}</span>
+                                    </Col>
+                                </Row>
                             </Button>
                         )
                     })}

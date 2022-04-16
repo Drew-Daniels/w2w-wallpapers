@@ -45,16 +45,15 @@ export function Item(props) {
     return (
         <li className='item'>
             <Card>
-                <div className='image-container'>
+                <div>
                     {loading &&
-                        <div className='loading-container'>
+                        <div>
                             <Spinner animation="grow" variant="primary" />
                         </div>
                     }
                     <Card.Img 
                         src={shopItem.imgURL} 
                         style={ loading ? {display: 'none'} : {} }
-                        className='item-image'
                         onLoad={() => {setLoading(false)}} 
                     />
                 </div> 
