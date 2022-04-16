@@ -2,4 +2,6 @@
 @import "~bootstrap/scss/bootstrap";
 
 // override bootstrap css rules here
-
+.card {
+    margin-bottom: 1em;
+}

@@ -6,6 +6,7 @@ import { Outlet, Link } from 'react-router-dom';
 // my components
 import { MenuBar } from './components/MenuBar/MenuBar';
 import { Cart } from './components/Cart/Cart';
+import { Footer } from './components/Footer/Footer';
 // import data
 import data from './data';
 
@@ -84,6 +85,7 @@ function App() {
           handleHideCart={handleHideCart}
         />
       </div>
+      <Footer />
     </div>
   );
 }
