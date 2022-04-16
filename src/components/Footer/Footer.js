@@ -6,7 +6,7 @@ import { Container } from 'react-bootstrap';
 export function Footer(props) {
 
   return (
-    <Container fluid as='footer' className='footer d-flex flex-column p-5'>
+    <Container fluid as='footer' className='footer d-flex flex-column p-5 fixed-bottom'>
       <Container as='a' id='github-link-project' className='d-flex justify-content-center' href='https://github.com/Drew-Daniels/cv-project'>
         <IconContext.Provider value={{ size: '2em', alignSelf: 'center', color: '#007bff'}}>
           <GitHubIcon />

@@ -79,7 +79,7 @@ function App() {
               setShopItems={setShopItems}
             />
           </Col>
-          <Col>
+          <Col className='mt-2 d-flex flex-column justify-content-center'>
             <Outlet 
               context={{
                 shopItems,
