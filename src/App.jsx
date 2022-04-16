@@ -1,6 +1,8 @@
 // import components
 // react
 import { useState } from 'react';
+// react-bootstrap
+import { Container, Row, Col } from 'react-bootstrap';
 // react-router-dom
 import { Outlet, Link } from 'react-router-dom';
 // my components
@@ -31,6 +33,7 @@ import { AiOutlineShoppingCart as CartIcon } from 'react-icons/ai';
 
 function App() {
 
+  const [shopItems, setShopItems] = useState(data);
   const [showCart, setShowCart] = useState(false);
   const handleShowCart = () => setShowCart(true);
   const handleHideCart = () => setShowCart(false);
@@ -48,7 +51,7 @@ function App() {
 
   const routes = [
     new MenuBarItem('home', HomeIcon),
-    new MenuBarItem('shop', ShopIcon),
+    // new MenuBarItem('shop', ShopIcon),
   ];
 
   const shopFilters = [
@@ -62,31 +65,36 @@ function App() {
   const cart = new MenuBarItem('cart', CartIcon);
 
   return (
-    <div className='content-container'>
-      <div className='content'>
-        <MenuBar 
-          showCart={showCart} 
-          handleShowCart={handleShowCart} 
-          routes={routes} 
-          shopFilters={shopFilters} 
-          cart={cart}
-        />
-        {/* 
-          Either Home, Items, or Item will be rendered here 
-          Use context object on Outlet to send state, state methods you want referenced in the destination URL
-        */}
-        <Outlet 
-          context={{
-            shopItems: data,
-          }}
-        />
-        <Cart 
-          showCart={showCart}
-          handleHideCart={handleHideCart}
-        />
-      </div>
-      <Footer />
-    </div>
+    <Container className='content-container'>
+      <Container className='d-flex flex-column'>
+        <Row>
+          <Col>
+            <MenuBar 
+              showCart={showCart} 
+              handleShowCart={handleShowCart} 
+              routes={routes} 
+              shopFilters={shopFilters} 
+              cart={cart}
+              shopItems={shopItems}
+              setShopItems={setShopItems}
+            />
+          </Col>
+          <Col>
+            <Outlet 
+              context={{
+                shopItems,
+                setShopItems,
+              }}
+            />
+            <Cart 
+              showCart={showCart}
+              handleHideCart={handleHideCart}
+            />
+          </Col>
+        </Row>
+      </Container>
+      {/* <Footer /> */}
+    </Container>
   );
 }
 

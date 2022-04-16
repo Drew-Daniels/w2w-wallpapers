@@ -1,9 +1,9 @@
 // import components
-
+// react-bootstrap
+import { Container, Row, Col } from 'react-bootstrap';
 // react-router-dom
 import { useOutletContext, useSearchParams, } from 'react-router-dom';
-
-// my componets
+// my components
 import { Item } from '../Item/Item';
 
 // import styling
@@ -11,7 +11,7 @@ import './Items.css';
 
 export function Items(props) {
 
-    const { shopItems } = useOutletContext();
+    const { shopItems, setShopItems } = useOutletContext();
     const [searchParams, setSearchParams] = useSearchParams();
 
     function matchesSearchParams(shopItem, param) {
@@ -22,14 +22,14 @@ export function Items(props) {
     }
 
     return (
-        <main className='items-container'>
+        <Container className='items-container'>
             <ul className='items'>
                 {shopItems
                     .filter((shopItem) => matchesSearchParams(shopItem, 'category'))
                     .map((shopItem, i) => {
-                        return (<Item shopItem={shopItem} />)
+                        return (<Item shopItem={shopItem} setShopItems={setShopItems} />)
                 })}
             </ul>
-        </main>
+        </Container>
     )
 }

@@ -1,6 +1,6 @@
 // import components
 // react
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 // react-icons components
 import {  IconContext } from 'react-icons';
 // import icons
@@ -19,7 +19,28 @@ import './Item.css';
 export function Item(props) {
 
     const [loading, setLoading] = useState(true);
-    const { shopItem } = props;
+    const { shopItem, setShopItems } = props;
+    // const [cartQty, setCartQty] = useState(shopItem.cartQty);
+
+    function handleCartDecr() {
+        // if (cartQty) {
+        //     setCartQty(prevCartQty => prevCartQty - 1);
+        // }
+
+        if (shopItem.cartQty) {
+            const newShopItem = {...shopItem, cartQty: shopItem.cartQty -1};
+            console.log(newShopItem);
+            setShopItems(prevShopItems => ({...prevShopItems, newShopItem}))
+        }
+
+    }
+
+    function handleCartIncr() {
+        // setCartQty(prevCartQty => prevCartQty + 1);
+        const newShopItem = {...shopItem, cartQty: shopItem.cartQty + 1};
+        console.log(newShopItem);
+        setShopItems(prevShopItems => ({...prevShopItems, newShopItem}))
+    }
 
     return (
         <li className='item'>
@@ -42,14 +63,14 @@ export function Item(props) {
                     <div className='d-flex flex-column'>
                         <a href={shopItem.brandURL}>{shopItem.brandURL}</a>
                         <ButtonGroup>
-                            <Button>
+                            <Button onClick={handleCartDecr}>
                                 <IconContext.Provider value={{ size: '2em' }}>
                                     <DecrCartIcon className='cart-icon'/>
                                 </IconContext.Provider>
                                 <span>Remove from Cart</span>
                             </Button>
-                            <input value={shopItem.cartQty}></input>
-                            <Button>
+                            <input value={shopItem.cartQty} style={{ textAlign: 'center'}}></input>
+                            <Button onClick={handleCartIncr}>
                                 <IconContext.Provider value={{ size: '2em' }}>
                                     <IncrCartIcon className='cart-icon'/>
                                 </IconContext.Provider>
