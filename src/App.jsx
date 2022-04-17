@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useReducer } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import { Outlet } from 'react-router-dom';
 import { MenuBar } from './components/MenuBar/MenuBar';
@@ -38,6 +38,16 @@ function App() {
   const handleShowCart = () => setShowCart(true);
   const handleHideCart = () => setShowCart(false);
   const [cart, setCart] = useState([]);
+
+  function addToCart(id) {
+    setCart(prevCart => {
+      
+    })
+  }
+
+  function removeFromCart(id) {
+
+  }
 
   return (
     <Container fluid className='content-container'>

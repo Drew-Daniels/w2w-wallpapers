@@ -68,12 +68,12 @@ export function MenuBar(props) {
                                 className='menu-bar-item-link btn btn-primary'
                             >
                                 <Row>
-                                    <Col className='d-flex align-items-center justify-content-center' sm={12} md={6} >
-                                        <IconContext.Provider value={{ size: '2em' }}>
+                                    <Col className='d-flex align-items-center justify-content-center' sm={12} md={12} lg={3} >
+                                        <IconContext.Provider value={{ size: '1em' }}>
                                             <route.icon className='menu-item-icon'/>
                                         </IconContext.Provider>
                                     </Col>
-                                    <Col className='d-flex align-items-center justify-content-center' sm={12} md={6} >
+                                    <Col className='d-flex align-items-center justify-content-center' sm={12} md={12} lg={9} >
                                         <span className='menu-bar-item-text'>{route.getDisplayName()}</span>
                                     </Col>
                                 </Row>
@@ -93,12 +93,12 @@ export function MenuBar(props) {
                             document.documentElement.scrollTop=0;
                         }}>
                         <Row>
-                            <Col className='d-flex align-items-center justify-content-center' sm={12} md={6} >
-                                <IconContext.Provider value={{ size: '2em' }}>
+                            <Col className='d-flex align-items-center justify-content-center' sm={12} md={12} lg={3} >
+                                <IconContext.Provider value={{ size: '1em' }}>
                                     <ShopAllIcon className='menu-item-icon' />
                                 </IconContext.Provider>
                             </Col>
-                            <Col className='d-flex align-items-center justify-content-center' sm={12} md={6} >
+                            <Col className='d-flex align-items-center justify-content-center' sm={12} md={12} lg={9} >
                                 <span>Shop All</span>
                             </Col>
                         </Row>
@@ -119,12 +119,12 @@ export function MenuBar(props) {
                                 }}
                             >
                                 <Row>
-                                    <Col className='d-flex align-items-center justify-content-center' sm={12} md={6}>
-                                        <IconContext.Provider value={{ size: '2em' }}>
+                                    <Col className='d-flex align-items-center justify-content-center' sm={12} md={12} lg={3}>
+                                        <IconContext.Provider value={{ size: '1em' }}>
                                             <shopFilter.icon />
                                         </IconContext.Provider>
                                     </Col>
-                                    <Col className='d-flex align-items-center justify-content-center' sm={12} md={6}>
+                                    <Col className='d-flex align-items-center justify-content-center' sm={12} md={12} lg={9}>
                                         <span >{'Shop ' + shopFilter.getDisplayName()}</span>
                                     </Col>
                                 </Row>
@@ -135,12 +135,12 @@ export function MenuBar(props) {
             </Row>
             {/* Cart */}
             <hr />
-            <Button onClick={handleShowCart} >
-                <span>0</span>
-                <IconContext.Provider value={{ size: '2em' }}>
+            <Button onClick={handleShowCart} className='d-flex justify-content-between align-content-center'>
+                <IconContext.Provider value={{ size: '1em', marginRight: '1em' }}>
                     <cartMenuBarItem.icon className='menu-item-icon' />
                 </IconContext.Provider>
                 <span>{cartMenuBarItem.getDisplayName()}</span>
+                <span>0</span>
             </Button>
         </Container>
     )

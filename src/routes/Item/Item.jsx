@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useReducer } from 'react';
 import { Container, Badge } from 'react-bootstrap';
 import { IconContext } from 'react-icons';
 import { BsFillCartDashFill as DecrCartIcon, BsFillCartPlusFill as IncrCartIcon } from 'react-icons/bs';
@@ -10,17 +10,24 @@ import './Item.css';
 export function Item(props) {
 
     const [loading, setLoading] = useState(true);
-    const { shopItem } = props;
+    const { category, imgURL, brandName, brandURL } = props.shopItem;
 
-    const { category, imgURL, brandName, brandURL, cartQty } = shopItem;
+    const initialState = { cartQty: 0 };
+    const [state, dispatch] = useReducer(reducer, initialState);
 
-    function handleCartDecr() {
-
-    }
-
-    function handleCartIncr() {
-
-    }
+    function reducer(state, action) {
+        switch (action.type) {
+            case 'increment':
+                return {cartQty: state.cartQty + 1};
+            case 'decrement':
+                if (state.cartQty > 0) {
+                    return {cartQty: state.cartQty - 1}
+                }
+                break;
+            default:
+                throw new Error();
+        }
+      }
 
     return (
         <Container className='item'>
@@ -45,16 +52,16 @@ export function Item(props) {
                     <div className='d-flex flex-column'>
                         <a href={brandURL}>{brandURL}</a>
                         <Container className='d-flex justify-content-center mt-2'>
-                            <Button onClick={handleCartDecr}>
+                            <Button onClick={() => dispatch({type: 'decrement'})}>
                                 <IconContext.Provider value={{ size: '1em' }}>
                                     <DecrCartIcon />
                                 </IconContext.Provider>
                             </Button>
                             <input 
-                                value={cartQty} 
+                                value={state.cartQty}
                                 style={{ textAlign: 'center', width: '4em'}}
                             ></input>
-                            <Button onClick={handleCartIncr} >
+                            <Button onClick={() => dispatch({type: 'increment'})} >
                                 <IconContext.Provider value={{ size: '1em' }}>
                                     <IncrCartIcon />
                                 </IconContext.Provider>
