@@ -1,43 +1,41 @@
-// import components
-// react
-import { useState } from 'react';
-// react-bootstrap
+import { useState, useEffect } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
-// react-router-dom
-import { Outlet, Link } from 'react-router-dom';
-// my components
+import { Outlet } from 'react-router-dom';
 import { MenuBar } from './components/MenuBar/MenuBar';
 import { Cart } from './components/Cart/Cart';
 import { Footer } from './components/Footer/Footer';
-// import data
-import { shopData, siteReviews } from './data';
 
-// import styling
-// my styling
+
+import { shopItemsData } from './data';
+
 import './App.scss';
 
-// import ICONS
-// react-icons
-// for routes
 import { AiOutlineHome as HomeIcon } from 'react-icons/ai';
-import { AiOutlineShopping as ShopIcon } from 'react-icons/ai';
-import { MdWallpaper as AppIcon } from 'react-icons/md';
-// for shop filters
 import { GiMoonOrbit as SpaceIcon } from 'react-icons/gi';
 import { GiSittingDog as AnimalsIcon } from 'react-icons/gi';
 import { MdEmojiNature as NatureIcon } from 'react-icons/md';
 import { FaShapes as MinimalistIcon } from 'react-icons/fa';
 import { RiBuilding2Fill as ArchitectureIcon } from 'react-icons/ri';
-// for cart
 import { AiOutlineShoppingCart as CartIcon } from 'react-icons/ai';
 
 function App() {
 
-  const [shopItems, setShopItems] = useState(shopData);
-  const [showCart, setShowCart] = useState(false);
-  const handleShowCart = () => setShowCart(true);
-  const handleHideCart = () => setShowCart(false);
-
+  // Declare classes
+  class ShopItem {
+    constructor(imgURL, brandName, brandURL, category, reviews, stars, price, id) {
+        this.imgURL = imgURL;
+        this.brandName = brandName;
+        this.brandURL = brandURL;
+        this.category = category;
+        this.reviews = reviews;
+        this.stars = stars;
+        this.price = price;
+        this.id = id;
+    }
+    getPrettyPrice() {
+      return 'Fill in later';
+    }
+  }
 
   class MenuBarItem {
     constructor(name, icon) {
@@ -49,6 +47,17 @@ function App() {
     }
   };
 
+  const [shopItems, setShopItems] = useState(
+    shopItemsData.map(shopItemData => {
+      const values = Object.values(shopItemData);
+      return new ShopItem(...values);
+    })
+  );
+  const [showCart, setShowCart] = useState(false);
+  const handleShowCart = () => setShowCart(true);
+  const handleHideCart = () => setShowCart(false);
+
+  // Instantiate classes from data
   const routes = [
     new MenuBarItem('home', HomeIcon),
   ];
@@ -74,8 +83,6 @@ function App() {
               routes={routes} 
               shopFilters={shopFilters} 
               cart={cart}
-              shopItems={shopItems}
-              setShopItems={setShopItems}
             />
           </Col>
           <Col className='mt-2 d-flex flex-column justify-content-center'>
@@ -88,6 +95,7 @@ function App() {
             <Cart 
               showCart={showCart}
               handleHideCart={handleHideCart}
+              shopItems={shopItems}
             />
           </Col>
         </Row>

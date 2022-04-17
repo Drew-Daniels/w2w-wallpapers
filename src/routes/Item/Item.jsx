@@ -1,54 +1,32 @@
-// import components
-// react
-import { useEffect, useState } from 'react';
-// react-bootstrap
+import { useState } from 'react';
 import { Container, Badge } from 'react-bootstrap';
-// react-icons components
-import {  IconContext } from 'react-icons';
-// import icons
-// react-icons icons
-import { 
-    BsFillCartDashFill as DecrCartIcon, 
-    BsFillCartPlusFill as IncrCartIcon 
-} from 'react-icons/bs';
-// react-bootstrap
+import { IconContext } from 'react-icons';
+import { BsFillCartDashFill as DecrCartIcon, BsFillCartPlusFill as IncrCartIcon } from 'react-icons/bs';
 import { Spinner } from 'react-bootstrap';
-
-import { ButtonGroup, Button, Card } from 'react-bootstrap';
+import { Button, Card } from 'react-bootstrap';
 
 import './Item.css';
 
 export function Item(props) {
 
     const [loading, setLoading] = useState(true);
-    const { shopItem, setShopItems } = props;
-    // const [cartQty, setCartQty] = useState(shopItem.cartQty);
+    const { shopItem } = props;
+
+    const { category, imgURL, brandName, brandURL, cartQty } = shopItem;
 
     function handleCartDecr() {
-        // if (cartQty) {
-        //     setCartQty(prevCartQty => prevCartQty - 1);
-        // }
-
-        if (shopItem.cartQty) {
-            const newShopItem = {...shopItem, cartQty: shopItem.cartQty -1};
-            console.log(newShopItem);
-            setShopItems(prevShopItems => ({...prevShopItems, newShopItem}))
-        }
 
     }
 
     function handleCartIncr() {
-        // setCartQty(prevCartQty => prevCartQty + 1);
-        const newShopItem = {...shopItem, cartQty: shopItem.cartQty + 1};
-        console.log(newShopItem);
-        setShopItems(prevShopItems => ({...prevShopItems, newShopItem}))
+
     }
 
     return (
         <Container className='item'>
             <Card>
                 <Card.Header>
-                    <Badge pill bg={shopItem.category}>{shopItem.category[0].toUpperCase() + shopItem.category.slice(1)}</Badge>
+                    <Badge pill bg={category}>{category[0].toUpperCase() + category.slice(1)}</Badge>
                 </Card.Header>
                 <div>
                     {loading &&
@@ -57,22 +35,25 @@ export function Item(props) {
                         </div>
                     }
                     <Card.Img 
-                        src={shopItem.imgURL} 
+                        src={imgURL} 
                         style={ loading ? {display: 'none'} : {} }
                         onLoad={() => {setLoading(false)}} 
                     />
                 </div> 
                 <Card.Body>
-                    <Card.Title>{shopItem.brandName}</Card.Title>
+                    <Card.Title>{brandName}</Card.Title>
                     <div className='d-flex flex-column'>
-                        <a href={shopItem.brandURL}>{shopItem.brandURL}</a>
+                        <a href={brandURL}>{brandURL}</a>
                         <Container className='d-flex justify-content-center mt-2'>
                             <Button onClick={handleCartDecr}>
                                 <IconContext.Provider value={{ size: '1em' }}>
                                     <DecrCartIcon />
                                 </IconContext.Provider>
                             </Button>
-                            <input value={shopItem.cartQty} style={{ textAlign: 'center', width: '4em'}}></input>
+                            <input 
+                                value={cartQty} 
+                                style={{ textAlign: 'center', width: '4em'}}
+                            ></input>
                             <Button onClick={handleCartIncr} >
                                 <IconContext.Provider value={{ size: '1em' }}>
                                     <IncrCartIcon />

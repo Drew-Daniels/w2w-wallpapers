@@ -1,9 +1,6 @@
-// import components
-// react-bootstrap
-import { Container, Row, Col } from 'react-bootstrap';
-// react-router-dom
+import { useEffect } from 'react';
+import { Container } from 'react-bootstrap';
 import { useOutletContext, useSearchParams, } from 'react-router-dom';
-// my components
 import { Item } from '../Item/Item';
 
 // import styling
@@ -21,12 +18,17 @@ export function Items(props) {
         return true;
     }
 
+    const displayItems = shopItems.filter((shopItem) => matchesSearchParams(shopItem, 'category'));
+
+    useEffect(() => {
+        console.log(shopItems);
+    }, [shopItems])
+
     return (
         <Container fluid className='mt-2 d-flex flex-column'>
-            {shopItems
-                .filter((shopItem) => matchesSearchParams(shopItem, 'category'))
+            {displayItems
                 .map((shopItem, i) => {
-                    return (<Item shopItem={shopItem} setShopItems={setShopItems} />)
+                    return (<Item key={i} shopItem={shopItem} shopItems={shopItems} setShopItems={setShopItems} />)
             })}
         </Container>
     )

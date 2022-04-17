@@ -19,20 +19,8 @@ import './MenuBar.css';
 
 export function MenuBar(props) {
 
-    const { showCart, handleShowCart, routes, shopFilters, cart, shopItems } = props;
+    const { handleShowCart, routes, shopFilters, cart } = props;
     const navigate = useNavigate();
-
-    useEffect(() => {
-        document.getElementById('num-items-in-cart').textContent = ctItemsInCart();
-    })
-
-    function ctItemsInCart() {
-        var ct = 0;
-        shopItems.forEach((shopItem) => {
-            ct += shopItem.cartQty;
-        })
-        return ct;
-    }
 
     return (
         <Container className='d-flex flex-column sticky-top mb-3'>
@@ -127,7 +115,7 @@ export function MenuBar(props) {
             {/* Cart */}
             <hr />
             <Button onClick={handleShowCart} >
-                <span id='num-items-in-cart'>0</span>
+                <span>0</span>
                 <IconContext.Provider value={{ size: '2em' }}>
                     <cart.icon className='menu-item-icon' />
                 </IconContext.Provider>
