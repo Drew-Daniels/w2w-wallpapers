@@ -54,7 +54,6 @@ function App() {
       // found
       setCart((prevCart) => {
         const newCart = [...prevCart];
-        console.log(i)
         newCart.splice(i, 1);
         return newCart;
       })
