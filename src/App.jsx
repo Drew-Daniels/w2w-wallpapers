@@ -49,11 +49,12 @@ function App() {
   }
 
   function removeFromCart(id) {
-    const i = shopItems.findIndex(shopItem => shopItem.id === id);
+    const i = cart.findIndex(cartItem => cartItem.id === id);
     if (i > -1) {
       // found
       setCart((prevCart) => {
         const newCart = [...prevCart];
+        console.log(i)
         newCart.splice(i, 1);
         return newCart;
       })
@@ -70,6 +71,7 @@ function App() {
         <Row>
           <Col md={3}>
             <MenuBar 
+              shopItems={shopItems}
               handleShowCart={handleShowCart}
               cart={cart}
             />
