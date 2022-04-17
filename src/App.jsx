@@ -1,4 +1,4 @@
-import { useState, useEffect, useReducer } from 'react';
+import { useState } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import { Outlet } from 'react-router-dom';
 import { MenuBar } from './components/MenuBar/MenuBar';
@@ -60,12 +60,8 @@ function App() {
     }
   }
 
-  useEffect(() => {
-    console.log(cart);
-  })
-
   return (
-    <Container fluid className='content-container'>
+    <Container fluid className='content-container min-vh-100' style={{ backgroundColor: ' rgb(0, 30, 60)'}} >
       <Container className='d-flex flex-column'>
         <Row>
           <Col md={3}>

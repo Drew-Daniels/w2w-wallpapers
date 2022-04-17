@@ -52,7 +52,7 @@ export function MenuBar(props) {
     })
 
     return (
-        <Container className='d-flex flex-column sticky-top mb-3'>
+        <Container className='d-flex flex-column sticky-top my-3 py-3' style={{ backgroundColor: 'rgb(0, 30, 60)', borderRadius: '.25em', border: '1px solid rgb(19, 47, 76)' }} >
             {/* Brand Image and Name */}
             <Row>
                 <Col>
@@ -145,15 +145,15 @@ export function MenuBar(props) {
             <hr />
             <Button onClick={handleShowCart}>
                 <Row>
-                    <Col>
+                    <Col className='d-flex align-items-center justify-content-center' sm={12} md={12} lg={3}>
                         <IconContext.Provider value={{ size: '1em', marginRight: '1em' }}>
                             <cartMenuBarItem.icon className='menu-item-icon' />
                         </IconContext.Provider>
                     </Col>
-                    <Col>
+                    <Col className='d-flex align-items-center justify-content-center' sm={12} md={12} lg={4}>
                         <span>{cartMenuBarItem.getDisplayName()}</span>
                     </Col>
-                    <Col>
+                    <Col className='d-flex align-items-center justify-content-center' sm={12} md={12} lg={5}>
                         <span id='num-cart-items' ></span>
                     </Col>
                 </Row>

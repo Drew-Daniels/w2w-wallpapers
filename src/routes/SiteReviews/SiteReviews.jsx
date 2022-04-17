@@ -22,7 +22,7 @@ export function SiteReviews(props) {
 
     return (
         <Container fluid>
-            <h1 style={{ fontStyle: 'italic' }}>What people are saying about Wall-to-Wall Wallpapers:</h1>
+            <h1 style={{ fontStyle: 'italic', color: 'rgb(13, 110, 253)' }}>What people are saying about Wall-to-Wall Wallpapers:</h1>
             <Carousel interval={5000} controls={false} indicators={false}>
                 {siteReviews.map((siteReview, i) => {
                     return (

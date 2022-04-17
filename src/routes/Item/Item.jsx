@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Container, Badge } from 'react-bootstrap';
 import { IconContext } from 'react-icons';
 import { BsFillCartDashFill as DecrCartIcon, BsFillCartPlusFill as IncrCartIcon } from 'react-icons/bs';
+import { AiFillStar as StarsIcon } from 'react-icons/ai';
 import { Spinner } from 'react-bootstrap';
 import { Button, Card } from 'react-bootstrap';
 
@@ -11,15 +12,28 @@ export function Item(props) {
 
     const [loading, setLoading] = useState(true);
     const { cart, addToCart, removeFromCart } = props;
-    const { id, category, imgURL, brandName, brandURL } = props.shopItem;
+    const { id, category, imgURL, brandName, brandURL, stars } = props.shopItem;
 
     const qty = cart.filter(cartItem => cartItem.id === id).length;
 
+    var starElements = [];
+    for (let i=0; i < stars; i++) {
+        const starElement = (
+            <IconContext.Provider value={{ color: 'rgb(245, 233, 66)' }}>
+                <StarsIcon />
+            </IconContext.Provider>
+        )
+        starElements.push(starElement);
+    }
+
     return (
-        <Container className='item'>
-            <Card>
-                <Card.Header>
+        <Container className='mb-2'>
+            <Card style={{ backgroundColor: ' rgb(0, 30, 60)', border: '1px solid rgb(19, 47, 76)', color: 'white' }}>
+                <Card.Header className='d-flex justify-content-between'>
                     <Badge pill bg={category}>{category[0].toUpperCase() + category.slice(1)}</Badge>
+                    <Container>
+                        {starElements}
+                    </Container>
                 </Card.Header>
                 <div>
                     {loading &&
@@ -36,7 +50,7 @@ export function Item(props) {
                 <Card.Body>
                     <Card.Title>{brandName}</Card.Title>
                     <div className='d-flex flex-column'>
-                        <a href={brandURL}>{brandURL}</a>
+                        <Card.Subtitle><a href={brandURL}>{brandURL}</a></Card.Subtitle>
                         <Container className='d-flex justify-content-center mt-2'>
                             <Button onClick={() => removeFromCart(id)}>
                                 <IconContext.Provider value={{ size: '1em' }}>
@@ -45,7 +59,7 @@ export function Item(props) {
                             </Button>
                             <input 
                                 value={qty}
-                                style={{ textAlign: 'center', width: '4em'}}
+                                style={{ textAlign: 'center', width: '4em', backgroundColor: 'rgb(0, 30, 60)', border: '1px solid rgb(19, 47, 76)', color: 'white' }}
                             ></input>
                             <Button onClick={() => addToCart(id)} >
                                 <IconContext.Provider value={{ size: '1em' }}>

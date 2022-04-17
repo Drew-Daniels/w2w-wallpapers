@@ -1,12 +1,19 @@
 // override bootstrap css rules here
 $theme-colors: (
+    // bootstrap colors
     'primary': rgb(13, 110, 253),
 
+    // category colors
     'space': rgb(33, 37, 41),
     'animals': rgb(13, 202, 240),
     'nature':  rgb(25, 135, 84),
     'minimalist': rgb(108, 117, 125),
     'architecture': rgb(214, 66, 243),
+
+    // theme colors
+    'fore': #212738,
+    'middle': gray,
+    'back': black,
 );
 // import here
 @import "~bootstrap/scss/bootstrap";

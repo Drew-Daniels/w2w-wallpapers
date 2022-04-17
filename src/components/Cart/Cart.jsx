@@ -1,6 +1,7 @@
 import { Container, Offcanvas, Card, Button } from 'react-bootstrap';
 import { IconContext } from 'react-icons';
 import { BsFillCartDashFill as DecrCartIcon, BsFillCartPlusFill as IncrCartIcon } from 'react-icons/bs';
+import { VscChromeClose as CartCloseIcon } from 'react-icons/vsc';
 import './Cart.css';
 
 export function Cart(props) {
@@ -8,9 +9,14 @@ export function Cart(props) {
     const {showCart, handleHideCart, cart, addToCart, removeFromCart } = props;
     const ids = [...new Set(cart.map(cartItem => cartItem.id))];
     return (
-        <Offcanvas show={showCart} placement='end' onHide={handleHideCart}>
-            <Offcanvas.Header closeButton>
+        <Offcanvas show={showCart} placement='end' onHide={handleHideCart} style={{ backgroundColor: ' rgb(0, 30, 60)', border: '1px solid rgb(19, 47, 76)', color: 'white' }}>
+            <Offcanvas.Header>
                 <Button>Checkout</Button>
+                <Button onClick={handleHideCart}>
+                    <IconContext.Provider value={{ color: 'white' }}>
+                        <CartCloseIcon />
+                    </IconContext.Provider>
+                </Button>
             </Offcanvas.Header>
             <Offcanvas.Body>
                 {ids.length < 1 &&
@@ -22,12 +28,12 @@ export function Cart(props) {
                     const { imgURL, brandName, price } = cartItemInstances[0];
                     const sum = qty * price;
                     return (
-                        <Card key={i}>
+                        <Card key={i} style={{ backgroundColor: ' rgb(0, 30, 60)', border: '1px solid rgb(19, 47, 76)', color: 'white' }}>
                             <Card.Header>{brandName}</Card.Header>
                             <Card.Body>
                                 <Card.Img variant='top' src={imgURL} alt={brandName} />
-                                <Card.Text>{qty}</Card.Text>
-                                <Card.Text>{sum}</Card.Text>
+                                <Card.Text style={{ paddingTop: '1em', color: 'rgb(13, 110, 253)' }}>Quantity: {qty}</Card.Text>
+                                <Card.Text style={{ paddingTop: '.5em', color: 'rgb(13, 110, 253)' }}>Subtotal: {sum}</Card.Text>
                                 <Container className='d-flex justify-content-center mt-2'>
                                     <Button onClick={() => removeFromCart(id)}>
                                         <IconContext.Provider value={{ size: '1em' }}>
@@ -36,7 +42,7 @@ export function Cart(props) {
                                     </Button>
                                         <input 
                                             value={qty}
-                                            style={{ textAlign: 'center', width: '4em'}}
+                                            style={{ textAlign: 'center', width: '4em', backgroundColor: 'rgb(0, 30, 60)', border: '1px solid rgb(19, 47, 76)', color: 'white'}}
                                         ></input>
                                     <Button onClick={() => addToCart(id)} >
                                         <IconContext.Provider value={{ size: '1em' }}>
