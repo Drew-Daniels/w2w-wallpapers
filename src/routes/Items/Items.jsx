@@ -20,10 +20,6 @@ export function Items(props) {
 
     const displayItems = shopItems.filter((shopItem) => matchesSearchParams(shopItem, 'category'));
 
-    useEffect(() => {
-        console.log(shopItems);
-    }, [shopItems])
-
     return (
         <Container fluid className='mt-2 d-flex flex-column'>
             {displayItems

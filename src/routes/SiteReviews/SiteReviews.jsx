@@ -30,7 +30,7 @@ export function SiteReviews(props) {
                         <Carousel.Item key={i} className='site-review'>
                             <Card>
                                 <Card.Header>
-                                    {siteReview.reviewer}
+                                    <span style={{ color: 'rgb(13, 110, 253)'}}>{siteReview.reviewer}</span>
                                     {' at '}
                                     {siteReview.time}
                                 </Card.Header>

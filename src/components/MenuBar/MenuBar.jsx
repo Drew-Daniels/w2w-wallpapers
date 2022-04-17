@@ -1,25 +1,46 @@
-// import components
-// react
-import { useEffect } from 'react';
-// react-router-dom
 import { createSearchParams, Link, useNavigate, useOutletContext } from 'react-router-dom';
-// react-bootstrap
 import { Container, Row, Col, ButtonGroup, Button } from 'react-bootstrap';
-// my components
 
-// import icons
-// react-icons
+import { AiOutlineHome as HomeIcon } from 'react-icons/ai';
+import { GiMoonOrbit as SpaceIcon } from 'react-icons/gi';
+import { GiSittingDog as AnimalsIcon } from 'react-icons/gi';
+import { MdEmojiNature as NatureIcon } from 'react-icons/md';
+import { FaShapes as MinimalistIcon } from 'react-icons/fa';
+import { RiBuilding2Fill as ArchitectureIcon } from 'react-icons/ri';
+import { AiOutlineShoppingCart as CartIcon } from 'react-icons/ai';
 import { IconContext } from 'react-icons';
 import { MdWallpaper as W2WIcon } from 'react-icons/md';
 import { BsFillBinocularsFill as ShopAllIcon } from 'react-icons/bs';
 
-// import styling
-// my styling
 import './MenuBar.css';
+
+class MenuBarItem {
+    constructor(name, icon) {
+      this.name = name;
+      this.icon = icon;
+    }
+    getDisplayName() {
+      return this.name[0].toUpperCase() + this.name.slice(1);
+    }
+  };
+
+const routeMenuBarItems = [
+    new MenuBarItem('home', HomeIcon),
+];
+
+const shopMenuBarItems = [
+    new MenuBarItem('space', SpaceIcon),
+    new MenuBarItem('animals', AnimalsIcon),
+    new MenuBarItem('nature', NatureIcon),
+    new MenuBarItem('minimalist', MinimalistIcon),
+    new MenuBarItem('architecture', ArchitectureIcon),
+];
+
+const cartMenuBarItem = new MenuBarItem('cart', CartIcon);
 
 export function MenuBar(props) {
 
-    const { handleShowCart, routes, shopFilters, cart } = props;
+    const { handleShowCart } = props;
     const navigate = useNavigate();
 
     return (
@@ -39,7 +60,7 @@ export function MenuBar(props) {
             <hr />
             <Row className='d-flex flex-column'>
                 <ButtonGroup vertical>
-                    {routes.map((route, i) => {
+                    {routeMenuBarItems.map((route, i) => {
                         return (
                             <Link
                                 key={i}
@@ -82,7 +103,7 @@ export function MenuBar(props) {
                             </Col>
                         </Row>
                     </Button>
-                    {shopFilters.map((shopFilter, i) => {
+                    {shopMenuBarItems.map((shopFilter, i) => {
                         return (
                             <Button
                                 className='mb-1'
@@ -117,9 +138,9 @@ export function MenuBar(props) {
             <Button onClick={handleShowCart} >
                 <span>0</span>
                 <IconContext.Provider value={{ size: '2em' }}>
-                    <cart.icon className='menu-item-icon' />
+                    <cartMenuBarItem.icon className='menu-item-icon' />
                 </IconContext.Provider>
-                <span>{cart.getDisplayName()}</span>
+                <span>{cartMenuBarItem.getDisplayName()}</span>
             </Button>
         </Container>
     )
