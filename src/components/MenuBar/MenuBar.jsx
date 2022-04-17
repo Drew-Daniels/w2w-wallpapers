@@ -143,12 +143,20 @@ export function MenuBar(props) {
             </Row>
             {/* Cart */}
             <hr />
-            <Button onClick={handleShowCart} className='d-flex justify-content-between align-content-center'>
-                <IconContext.Provider value={{ size: '1em', marginRight: '1em' }}>
-                    <cartMenuBarItem.icon className='menu-item-icon' />
-                </IconContext.Provider>
-                <span>{cartMenuBarItem.getDisplayName()}</span>
-                <span id='num-cart-items' ></span>
+            <Button onClick={handleShowCart}>
+                <Row>
+                    <Col>
+                        <IconContext.Provider value={{ size: '1em', marginRight: '1em' }}>
+                            <cartMenuBarItem.icon className='menu-item-icon' />
+                        </IconContext.Provider>
+                    </Col>
+                    <Col>
+                        <span>{cartMenuBarItem.getDisplayName()}</span>
+                    </Col>
+                    <Col>
+                        <span id='num-cart-items' ></span>
+                    </Col>
+                </Row>
             </Button>
         </Container>
     )
