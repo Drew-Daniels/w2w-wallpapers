@@ -90,6 +90,8 @@ function App() {
               handleHideCart={handleHideCart}
               shopItems={shopItems}
               cart={cart}
+              addToCart={addToCart}
+              removeFromCart={removeFromCart}
             />
           </Col>
         </Row>
