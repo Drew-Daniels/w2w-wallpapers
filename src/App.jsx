@@ -40,14 +40,29 @@ function App() {
   const [cart, setCart] = useState([]);
 
   function addToCart(id) {
-    setCart(prevCart => {
-      
+    const shopItem = shopItems.find(shopItem => shopItem.id === id);
+    setCart((prevCart) => {
+      const newCart = [...prevCart];
+      newCart.push(shopItem);
+      return newCart;
     })
   }
 
   function removeFromCart(id) {
-
+    const i = shopItems.findIndex(shopItem => shopItem.id === id);
+    if (i > -1) {
+      // found
+      setCart((prevCart) => {
+        const newCart = [...prevCart];
+        newCart.splice(i, 1);
+        return newCart;
+      })
+    }
   }
+
+  useEffect(() => {
+    console.log(cart);
+  })
 
   return (
     <Container fluid className='content-container'>
@@ -55,8 +70,8 @@ function App() {
         <Row>
           <Col md={3}>
             <MenuBar 
-              showCart={showCart} 
-              handleShowCart={handleShowCart} 
+              handleShowCart={handleShowCart}
+              cart={cart}
             />
           </Col>
           <Col className='mt-2 d-flex flex-column justify-content-center'>
@@ -64,12 +79,16 @@ function App() {
               context={{
                 shopItems,
                 setShopItems,
+                cart,
+                addToCart,
+                removeFromCart,
               }}
             />
             <Cart 
               showCart={showCart}
               handleHideCart={handleHideCart}
               shopItems={shopItems}
+              cart={cart}
             />
           </Col>
         </Row>

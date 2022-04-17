@@ -8,7 +8,7 @@ import './Items.css';
 
 export function Items(props) {
 
-    const { shopItems, setShopItems } = useOutletContext();
+    const { shopItems, setShopItems, cart, addToCart, removeFromCart } = useOutletContext();
     const [searchParams, setSearchParams] = useSearchParams();
 
     function matchesSearchParams(shopItem, param) {
@@ -24,7 +24,17 @@ export function Items(props) {
         <Container fluid className='mt-2 d-flex flex-column'>
             {displayItems
                 .map((shopItem, i) => {
-                    return (<Item key={i} shopItem={shopItem} shopItems={shopItems} setShopItems={setShopItems} />)
+                    return (
+                        <Item 
+                            key={i}
+                            shopItem={shopItem} 
+                            shopItems={shopItems} 
+                            setShopItems={setShopItems} 
+                            cart={cart} 
+                            addToCart={addToCart} 
+                            removeFromCart={removeFromCart}
+                        />
+                    )
             })}
         </Container>
     )

@@ -13,6 +13,7 @@ import { MdWallpaper as W2WIcon } from 'react-icons/md';
 import { BsFillBinocularsFill as ShopAllIcon } from 'react-icons/bs';
 
 import './MenuBar.css';
+import { useState, useEffect } from 'react';
 
 class MenuBarItem {
     constructor(name, icon) {
@@ -38,10 +39,17 @@ const shopMenuBarItems = [
 
 const cartMenuBarItem = new MenuBarItem('cart', CartIcon);
 
+
 export function MenuBar(props) {
 
-    const { handleShowCart } = props;
+    const { handleShowCart, cart } = props;
     const navigate = useNavigate();
+
+
+    useEffect(() => {
+        const numCartItems = document.getElementById('num-cart-items');
+        numCartItems.textContent = cart.length;
+    })
 
     return (
         <Container className='d-flex flex-column sticky-top mb-3'>
@@ -140,7 +148,7 @@ export function MenuBar(props) {
                     <cartMenuBarItem.icon className='menu-item-icon' />
                 </IconContext.Provider>
                 <span>{cartMenuBarItem.getDisplayName()}</span>
-                <span>0</span>
+                <span id='num-cart-items' ></span>
             </Button>
         </Container>
     )

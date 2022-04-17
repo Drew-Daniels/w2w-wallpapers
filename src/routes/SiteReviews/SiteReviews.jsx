@@ -25,7 +25,6 @@ export function SiteReviews(props) {
             <h1 style={{ fontStyle: 'italic' }}>What people are saying about Wall-to-Wall Wallpapers:</h1>
             <Carousel interval={5000} controls={false} indicators={false}>
                 {siteReviews.map((siteReview, i) => {
-                    console.log(siteReview)
                     return (
                         <Carousel.Item key={i} className='site-review'>
                             <Card>
