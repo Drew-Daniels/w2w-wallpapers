@@ -14,12 +14,11 @@ function App() {
 
   // Declare classes
   class ShopItem {
-    constructor(imgURL, brandName, brandURL, category, reviews, stars, price, id) {
+    constructor(imgURL, brandName, brandURL, category, stars, price, id) {
         this.imgURL = imgURL;
         this.brandName = brandName;
         this.brandURL = brandURL;
         this.category = category;
-        this.reviews = reviews;
         this.stars = stars;
         this.price = price;
         this.id = id;

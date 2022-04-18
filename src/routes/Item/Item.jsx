@@ -12,11 +12,12 @@ export function Item(props) {
 
     const [loading, setLoading] = useState(true);
     const { cart, addToCart, removeFromCart } = props;
-    const { id, category, imgURL, brandName, brandURL, stars, reviews } = props.shopItem;
+    const { id, category, imgURL, brandName, brandURL, stars } = props.shopItem;
 
     const qty = cart.filter(cartItem => cartItem.id === id).length;
 
     var starElements = [];
+    console.log(stars);
     for (let i=0; i < stars; i++) {
         const starElement = (
             <IconContext.Provider value={{ color: 'rgb(245, 233, 66)' }}>
