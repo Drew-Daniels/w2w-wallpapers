@@ -12,7 +12,7 @@ root.render(
   <React.StrictMode>
     <BrowserRouter>
       <Routes>
-        <Route path ='/' element={<App /> }>
+        <Route path ='/w2w-wallpapers' element={<App /> }>
           <Route index element={<SiteReviews />} />
           <Route path='shop' element ={<Items />} />
           <Route path='*' element={<NotFound />} />
