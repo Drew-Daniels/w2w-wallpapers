@@ -43,7 +43,7 @@ export function MenuBar(props) {
                     {/* Routes */}
                     {/* Home Route */}
                     <Link
-                        to={'/'}
+                        to={'/w2w-wallpapers'}
                         className='menu-bar-item-link btn btn-primary mb-1'
                     >
                         <Row>
