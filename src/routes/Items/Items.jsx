@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import { Container } from 'react-bootstrap';
 import { useOutletContext, useSearchParams, } from 'react-router-dom';
 import { Item } from '../Item/Item';

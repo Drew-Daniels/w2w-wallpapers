@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { Container, Carousel, Card } from 'react-bootstrap';
 import { siteReviewsData } from '../../data';
 import './SiteReviews.css';
