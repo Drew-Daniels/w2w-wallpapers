@@ -42,7 +42,7 @@ const shopItemsData = [
             'Wow, great!',
             'Gee wow'
         ],
-        stars: 4,
+        stars: 5,
         price: 9.99,
         id: 1,
     },
@@ -68,7 +68,7 @@ const shopItemsData = [
             'Wow, great!',
             'Gee wow'
         ],
-        stars: 4,
+        stars: 5,
         price: 9.99,
         id: 3,
     },
@@ -81,7 +81,7 @@ const shopItemsData = [
             'Wow, great!',
             'Gee wow'
         ],
-        stars: 4,
+        stars: 5,
         price: 9.99,
         id: 4,
     },
@@ -121,7 +121,7 @@ const shopItemsData = [
             'Wow, great!',
             'Gee wow'
         ],
-        stars: 4,
+        stars: 5,
         price: 9.99,
         id: 7,
     },
@@ -161,7 +161,7 @@ const shopItemsData = [
             'Wow, great!',
             'Gee wow'
         ],
-        stars: 4,
+        stars: 5,
         price: 9.99,
         id: 10,
     },
@@ -174,7 +174,7 @@ const shopItemsData = [
             'Wow, great!',
             'Gee wow'
         ],
-        stars: 4,
+        stars: 5,
         price: 9.99,
         id: 11,
     },
@@ -240,7 +240,7 @@ const shopItemsData = [
             'Wow, great!',
             'Gee wow'
         ],
-        stars: 4,
+        stars: 5,
         price: 9.99,
         id: 16,
     },
@@ -267,7 +267,7 @@ const shopItemsData = [
             'Wow, great!',
             'Gee wow'
         ],
-        stars: 4,
+        stars: 5,
         price: 9.99,
         id: 18,
     },
@@ -280,7 +280,7 @@ const shopItemsData = [
             'Wow, great!',
             'Gee wow'
         ],
-        stars: 4,
+        stars: 5,
         price: 9.99,
         id: 19,
     },
@@ -293,7 +293,7 @@ const shopItemsData = [
             'Wow, great!',
             'Gee wow'
         ],
-        stars: 4,
+        stars: 5,
         price: 9.99,
         id: 20,
     },
