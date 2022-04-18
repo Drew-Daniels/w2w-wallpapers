@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/w2w-wallpapers/static/css/main.afe1340d.css",
-    "main.js": "/w2w-wallpapers/static/js/main.36cf54f6.js",
+    "main.js": "/w2w-wallpapers/static/js/main.81ba404e.js",
     "static/media/andy-holmes.jpg": "/w2w-wallpapers/static/media/andy-holmes.125ef616c7dfa7fbfff8.jpg",
     "static/media/v2osk.jpg": "/w2w-wallpapers/static/media/v2osk.c22d6ef8eac21c1807d4.jpg",
     "static/media/vincentiu-solomon.jpg": "/w2w-wallpapers/static/media/vincentiu-solomon.701c3f7ad50ceaeff751.jpg",
@@ -24,10 +24,10 @@
     "static/media/wexor-tmg.jpg": "/w2w-wallpapers/static/media/wexor-tmg.c4cd11d2b33dd475ec5b.jpg",
     "index.html": "/w2w-wallpapers/index.html",
     "main.afe1340d.css.map": "/w2w-wallpapers/static/css/main.afe1340d.css.map",
-    "main.36cf54f6.js.map": "/w2w-wallpapers/static/js/main.36cf54f6.js.map"
+    "main.81ba404e.js.map": "/w2w-wallpapers/static/js/main.81ba404e.js.map"
   },
   "entrypoints": [
     "static/css/main.afe1340d.css",
-    "static/js/main.36cf54f6.js"
+    "static/js/main.81ba404e.js"
   ]
 }
