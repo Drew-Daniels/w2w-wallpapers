@@ -7,7 +7,7 @@ export function Footer(props) {
 
   return (
     <Container fluid as='footer' className='footer d-flex flex-column py-5'>
-      <Container as='a' id='github-link-project' className='d-flex justify-content-center' href='https://github.com/Drew-Daniels/cv-project'>
+      <Container as='a' id='github-link-project' className='d-flex justify-content-center' href='https://github.com/Drew-Daniels/w2w-wallpapers'>
         <IconContext.Provider value={{ size: '2em', alignSelf: 'center', color: '#007bff'}}>
           <GitHubIcon />
         </IconContext.Provider>
