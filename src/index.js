@@ -13,8 +13,8 @@ root.render(
       <Routes>
         <Route path ='/' element={<App /> }>
           <Route exact index element={<SiteReviews />} />
-          <Route path='/shop' element ={<Items />} />
-          <Route path='/*' element={<NotFound />} />
+          <Route path='shop' element ={<Items />} />
+          <Route path='*' element={<NotFound />} />
         </Route>
       </Routes>
     </HashRouter>
