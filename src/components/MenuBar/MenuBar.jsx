@@ -81,7 +81,7 @@ export function MenuBar(props) {
                                 key={i} 
                                 onClick={() => {
                                     navigate({
-                                        pathname: '/shop',
+                                        pathname: 'shop',
                                         search: createSearchParams({
                                             category: shopFilter.name
                                         }).toString()
