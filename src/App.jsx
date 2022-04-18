@@ -92,7 +92,7 @@ function App() {
           </Col>
         </Row>
       </Container>
-      {/* <Footer /> */}
+      <Footer />
     </Container>
   );
 }

@@ -150,10 +150,7 @@ export function MenuBar(props) {
                             <cartMenuBarItem.icon className='menu-item-icon' />
                         </IconContext.Provider>
                     </Col>
-                    <Col className='d-flex align-items-center justify-content-center' sm={12} md={12} lg={4}>
-                        <span>{cartMenuBarItem.getDisplayName()}</span>
-                    </Col>
-                    <Col className='d-flex align-items-center justify-content-center' sm={12} md={12} lg={5}>
+                    <Col className='d-flex align-items-center justify-content-center' sm={12} md={12} lg={9}>
                         <span id='num-cart-items' ></span>
                     </Col>
                 </Row>

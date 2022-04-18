@@ -11,12 +11,12 @@ export function Cart(props) {
     return (
         <Offcanvas show={showCart} placement='end' onHide={handleHideCart} style={{ backgroundColor: ' rgb(0, 30, 60)', border: '1px solid rgb(19, 47, 76)', color: 'white' }}>
             <Offcanvas.Header>
-                <Button>Checkout</Button>
                 <Button onClick={handleHideCart}>
                     <IconContext.Provider value={{ color: 'white' }}>
                         <CartCloseIcon />
                     </IconContext.Provider>
                 </Button>
+                <Button>Checkout</Button>
             </Offcanvas.Header>
             <Offcanvas.Body>
                 {ids.length < 1 &&
@@ -27,13 +27,14 @@ export function Cart(props) {
                     const qty = cartItemInstances.length;
                     const { imgURL, brandName, price } = cartItemInstances[0];
                     const sum = qty * price;
+                    const sumAsCurrency = sum.toLocaleString('en-US', {style: 'currency', currency: 'USD'})
                     return (
                         <Card key={i} style={{ backgroundColor: ' rgb(0, 30, 60)', border: '1px solid rgb(19, 47, 76)', color: 'white' }}>
                             <Card.Header>{brandName}</Card.Header>
                             <Card.Body>
                                 <Card.Img variant='top' src={imgURL} alt={brandName} />
                                 <Card.Text style={{ paddingTop: '1em', color: 'rgb(13, 110, 253)' }}>Quantity: {qty}</Card.Text>
-                                <Card.Text style={{ paddingTop: '.5em', color: 'rgb(13, 110, 253)' }}>Subtotal: {sum}</Card.Text>
+                                <Card.Text style={{ paddingTop: '.5em', color: 'rgb(13, 110, 253)' }}>Subtotal: {sumAsCurrency}</Card.Text>
                                 <Container className='d-flex justify-content-center mt-2'>
                                     <Button onClick={() => removeFromCart(id)}>
                                         <IconContext.Provider value={{ size: '1em' }}>
