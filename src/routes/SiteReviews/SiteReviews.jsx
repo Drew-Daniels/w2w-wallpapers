@@ -23,11 +23,11 @@ export function SiteReviews(props) {
     return (
         <Container fluid>
             <h1 style={{ fontStyle: 'italic', color: 'rgb(13, 110, 253)' }}>What people are saying about Wall-to-Wall Wallpapers:</h1>
-            <Carousel interval={5000} controls={false} indicators={false}>
+            <Carousel interval={5000} controls={false} indicators={false} className='pt-2'>
                 {siteReviews.map((siteReview, i) => {
                     return (
                         <Carousel.Item key={i} className='site-review'>
-                            <Card>
+                            <Card style={{ backgroundColor: 'rgb(0, 30, 60)', border: '1px solid rgb(19, 47, 76)', color: 'white' }}>
                                 <Card.Header>
                                     <span style={{ color: 'rgb(13, 110, 253)'}}>{siteReview.reviewer}</span>
                                     {' at '}

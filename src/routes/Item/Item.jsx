@@ -12,7 +12,7 @@ export function Item(props) {
 
     const [loading, setLoading] = useState(true);
     const { cart, addToCart, removeFromCart } = props;
-    const { id, category, imgURL, brandName, brandURL, stars } = props.shopItem;
+    const { id, category, imgURL, brandName, brandURL, stars, reviews } = props.shopItem;
 
     const qty = cart.filter(cartItem => cartItem.id === id).length;
 
@@ -51,7 +51,7 @@ export function Item(props) {
                     <Card.Title>{brandName}</Card.Title>
                     <div className='d-flex flex-column'>
                         <Card.Subtitle><a href={brandURL}>{brandURL}</a></Card.Subtitle>
-                        <Container className='d-flex justify-content-center mt-2'>
+                        <Card.Footer className='d-flex justify-content-center pt-2'>
                             <Button onClick={() => removeFromCart(id)}>
                                 <IconContext.Provider value={{ size: '1em' }}>
                                     <DecrCartIcon />
@@ -67,7 +67,7 @@ export function Item(props) {
                                     <IncrCartIcon />
                                 </IconContext.Provider>
                             </Button>
-                        </Container>
+                        </Card.Footer>
                     </div>
                 </Card.Body>
             </Card>

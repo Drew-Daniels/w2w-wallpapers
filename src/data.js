@@ -38,10 +38,6 @@ const shopItemsData = [
         brandName: 'Andy Holmes',
         brandURL: 'https://unsplash.com/@andyjh07',
         category: 'space',
-        reviews: [
-            'Wow, great!',
-            'Gee wow'
-        ],
         stars: 5,
         price: 9.99,
         id: 1,
@@ -51,10 +47,6 @@ const shopItemsData = [
         brandName: 'Guillermo Ferla',
         brandURL: 'https://unsplash.com/@gferla',
         category: 'space',
-        reviews: [
-            'Wow, great!',
-            'Gee wow'
-        ],
         stars: 4,
         price: 9.99,
         id: 2,
@@ -64,10 +56,6 @@ const shopItemsData = [
         brandName: 'NASA',
         brandURL: 'https://unsplash.com/@nasa',
         category: 'space',
-        reviews: [
-            'Wow, great!',
-            'Gee wow'
-        ],
         stars: 5,
         price: 9.99,
         id: 3,
@@ -77,10 +65,6 @@ const shopItemsData = [
         brandName: 'Vincentiu Solomon',
         brandURL: 'https://unsplash.com/@vincentiu',
         category: 'space',
-        reviews: [
-            'Wow, great!',
-            'Gee wow'
-        ],
         stars: 5,
         price: 9.99,
         id: 4,
@@ -91,10 +75,6 @@ const shopItemsData = [
         brandName: 'Geran de Klerk',
         brandURL: 'https://unsplash.com/@gerandeklerk',
         category: 'animals',
-        reviews: [
-            'Wow, great!',
-            'Gee wow'
-        ],
         stars: 4,
         price: 9.99,
         id: 5,
@@ -104,10 +84,6 @@ const shopItemsData = [
         brandName: 'Mark Stoop',
         brandURL: 'https://unsplash.com/@markstoop',
         category: 'animals',
-        reviews: [
-            'Wow, great!',
-            'Gee wow'
-        ],
         stars: 4,
         price: 9.99,
         id: 6,
@@ -117,10 +93,6 @@ const shopItemsData = [
         brandName: 'Ray Hennessy',
         brandURL: 'https://unsplash.com/@rayhennessy',
         category: 'animals',
-        reviews: [
-            'Wow, great!',
-            'Gee wow'
-        ],
         stars: 5,
         price: 9.99,
         id: 7,
@@ -130,10 +102,6 @@ const shopItemsData = [
         brandName: 'Wexor Tmg',
         brandURL: 'https://unsplash.com/@wexor',
         category: 'animals',
-        reviews: [
-            'Wow, great!',
-            'Gee wow'
-        ],
         stars: 4,
         price: 9.99,
         id: 8,
@@ -144,10 +112,6 @@ const shopItemsData = [
         brandName:'Claudio Testa',
         brandURL: 'https://unsplash.com/@claudiotesta',
         category: 'nature',
-        reviews: [
-            'Wow, great!',
-            'Gee wow'
-        ],
         stars: 4,
         price: 9.99,
         id: 9,
@@ -157,10 +121,6 @@ const shopItemsData = [
         brandName: 'Qingbao Meng',
         brandURL: 'https://unsplash.com/@ideasboom',
         category: 'nature',
-        reviews: [
-            'Wow, great!',
-            'Gee wow'
-        ],
         stars: 5,
         price: 9.99,
         id: 10,
@@ -170,10 +130,6 @@ const shopItemsData = [
         brandName: 'Quino Al',
         brandURL: 'https://unsplash.com/@quinoal',
         category: 'nature',
-        reviews: [
-            'Wow, great!',
-            'Gee wow'
-        ],
         stars: 5,
         price: 9.99,
         id: 11,
@@ -183,10 +139,6 @@ const shopItemsData = [
         brandName: 'v2osk',
         brandURL :'https://unsplash.com/@v2osk',
         category: 'nature',
-        reviews: [
-            'Wow, great!',
-            'Gee wow'
-        ],
         stars: 4,
         price: 9.99,
         id: 12,
@@ -197,10 +149,6 @@ const shopItemsData = [
         brandName: 'Milad Fakurian',
         brandURL: 'https://unsplash.com/@fakurian',
         category: 'minimalist',
-        reviews: [
-            'Wow, great!',
-            'Gee wow'
-        ],
         stars: 4,
         price: 9.99,
         id: 13,
@@ -210,10 +158,6 @@ const shopItemsData = [
         brandName: 'Pawel Czerwinkski',
         brandURL: 'https://unsplash.com/@pawel_czerwinski',
         category: 'minimalist',
-        reviews: [
-            'Wow, great!',
-            'Gee wow'
-        ],
         stars: 4,
         price: 9.99,
         id: 14,
@@ -223,10 +167,6 @@ const shopItemsData = [
         brandName: 'Scott Web',
         brandURL: 'https://unsplash.com/@scottwebb',
         category: 'minimalist',
-        reviews: [
-            'Wow, great!',
-            'Gee wow'
-        ],
         stars: 4,
         price: 9.99,
         id: 15,
@@ -236,10 +176,6 @@ const shopItemsData = [
         brandName: 'Sebastian Svenson',
         brandURL: 'https://unsplash.com/@sebastiansvenson',
         category: 'minimalist',
-        reviews: [
-            'Wow, great!',
-            'Gee wow'
-        ],
         stars: 5,
         price: 9.99,
         id: 16,
@@ -250,10 +186,6 @@ const shopItemsData = [
         brandName: 'Lance Anderson',
         brandURL: 'https://unsplash.com/@lanceanderson',
         category: 'architecture',
-        reviews: [
-            'Wow, great!',
-            'Gee wow'
-        ],
         stars: 4,
         price: 9.99,
         id: 17,
@@ -263,10 +195,6 @@ const shopItemsData = [
         brandName: 'Alex',
         brandURL: 'https://unsplash.com/@brizmaker',
         category: 'architecture',
-        reviews: [
-            'Wow, great!',
-            'Gee wow'
-        ],
         stars: 5,
         price: 9.99,
         id: 18,
@@ -276,10 +204,6 @@ const shopItemsData = [
         brandName: 'Maarten Deckers',
         brandURL: 'https://unsplash.com/@maartendeckers',
         category: 'architecture',
-        reviews: [
-            'Wow, great!',
-            'Gee wow'
-        ],
         stars: 5,
         price: 9.99,
         id: 19,
@@ -289,10 +213,6 @@ const shopItemsData = [
         brandName: 'Pierre Chatel-Innocenti',
         brandURL: 'https://unsplash.com/@chatelp',
         category: 'architecture',
-        reviews: [
-            'Wow, great!',
-            'Gee wow'
-        ],
         stars: 5,
         price: 9.99,
         id: 20,
