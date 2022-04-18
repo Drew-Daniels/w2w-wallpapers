@@ -7,12 +7,10 @@ import { GiSittingDog as AnimalsIcon } from 'react-icons/gi';
 import { MdEmojiNature as NatureIcon } from 'react-icons/md';
 import { FaShapes as MinimalistIcon } from 'react-icons/fa';
 import { RiBuilding2Fill as ArchitectureIcon } from 'react-icons/ri';
-import { AiOutlineShoppingCart as CartIcon } from 'react-icons/ai';
 import { IconContext } from 'react-icons';
 import { BsFillBinocularsFill as ShopAllIcon } from 'react-icons/bs';
 
 import './MenuBar.css';
-import { useEffect } from 'react';
 
 class MenuBarItem {
     constructor(name, icon) {
