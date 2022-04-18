@@ -60,6 +60,7 @@ export function Item(props) {
                             <input 
                                 value={qty}
                                 style={{ textAlign: 'center', width: '4em', backgroundColor: 'rgb(0, 30, 60)', border: '1px solid rgb(19, 47, 76)', color: 'white' }}
+                                readOnly
                             ></input>
                             <Button onClick={() => addToCart(id)} >
                                 <IconContext.Provider value={{ size: '1em' }}>
