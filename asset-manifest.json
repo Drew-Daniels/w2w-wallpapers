@@ -1,0 +1,33 @@
+{
+  "files": {
+    "main.css": "/w2w-wallpapers/static/css/main.afe1340d.css",
+    "main.js": "/w2w-wallpapers/static/js/main.36cf54f6.js",
+    "static/media/andy-holmes.jpg": "/w2w-wallpapers/static/media/andy-holmes.125ef616c7dfa7fbfff8.jpg",
+    "static/media/v2osk.jpg": "/w2w-wallpapers/static/media/v2osk.c22d6ef8eac21c1807d4.jpg",
+    "static/media/vincentiu-solomon.jpg": "/w2w-wallpapers/static/media/vincentiu-solomon.701c3f7ad50ceaeff751.jpg",
+    "static/media/claudio-testa.jpg": "/w2w-wallpapers/static/media/claudio-testa.ad4612b1c5c03bc6cc47.jpg",
+    "static/media/guillermo-ferla.jpg": "/w2w-wallpapers/static/media/guillermo-ferla.9107912acdd7a084b023.jpg",
+    "static/media/quino-al.jpg": "/w2w-wallpapers/static/media/quino-al.739b04e6e8b94a064ae8.jpg",
+    "static/media/alex.jpg": "/w2w-wallpapers/static/media/alex.5e36cdeec12fc246566b.jpg",
+    "static/media/lance-anderson.jpg": "/w2w-wallpapers/static/media/lance-anderson.21ce608f512483ded331.jpg",
+    "static/media/pawel-czerwinski.jpg": "/w2w-wallpapers/static/media/pawel-czerwinski.ed100fe8bf051b4356f0.jpg",
+    "static/media/nasa.jpg": "/w2w-wallpapers/static/media/nasa.62810b1e49fbe1c33a62.jpg",
+    "static/media/mark-stoop.jpg": "/w2w-wallpapers/static/media/mark-stoop.515ee2e40e9dd7415439.jpg",
+    "static/media/scott-webb.jpg": "/w2w-wallpapers/static/media/scott-webb.6c95c7cc102958e2adbd.jpg",
+    "static/media/maarten-deckers.jpg": "/w2w-wallpapers/static/media/maarten-deckers.264e039951dd82821a6e.jpg",
+    "static/media/ray-hennessy.jpg": "/w2w-wallpapers/static/media/ray-hennessy.253a3c4650981c89fea1.jpg",
+    "static/media/qingbao-meng.jpg": "/w2w-wallpapers/static/media/qingbao-meng.d7ad1e6f58fedb261460.jpg",
+    "static/media/sebastian-svenson.jpg": "/w2w-wallpapers/static/media/sebastian-svenson.fb31f15e987256399c2d.jpg",
+    "static/media/geran-de-klerk.jpg": "/w2w-wallpapers/static/media/geran-de-klerk.04cf47372992d43a72d9.jpg",
+    "static/media/pierre-chatel-innocenti.jpg": "/w2w-wallpapers/static/media/pierre-chatel-innocenti.bbd19c9193cb5fcbba4c.jpg",
+    "static/media/milad-fakurian.jpg": "/w2w-wallpapers/static/media/milad-fakurian.a5ebb8fa7c05886138d3.jpg",
+    "static/media/wexor-tmg.jpg": "/w2w-wallpapers/static/media/wexor-tmg.c4cd11d2b33dd475ec5b.jpg",
+    "index.html": "/w2w-wallpapers/index.html",
+    "main.afe1340d.css.map": "/w2w-wallpapers/static/css/main.afe1340d.css.map",
+    "main.36cf54f6.js.map": "/w2w-wallpapers/static/js/main.36cf54f6.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.afe1340d.css",
+    "static/js/main.36cf54f6.js"
+  ]
+}
