@@ -59,7 +59,7 @@ export function MenuBar(props) {
                     <Button 
                         className='mb-1'
                         onClick={() => {
-                            navigate('shop');
+                            navigate('/shop');
                             document.documentElement.scrollTop=0;
                         }}>
                         <Row>
@@ -81,7 +81,7 @@ export function MenuBar(props) {
                                 key={i} 
                                 onClick={() => {
                                     navigate({
-                                        pathname: 'shop',
+                                        pathname: '/shop',
                                         search: createSearchParams({
                                             category: shopFilter.name
                                         }).toString()

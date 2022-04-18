@@ -9,12 +9,12 @@ import {NotFound} from './routes/NotFound/NotFound';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <HashRouter>
+    <HashRouter basename='/w2w-wallpapers'>
       <Routes>
         <Route path ='/' element={<App /> }>
-          <Route index element={<SiteReviews />} />
-          <Route path='shop' element ={<Items />} />
-          <Route path='*' element={<NotFound />} />
+          <Route exact index element={<SiteReviews />} />
+          <Route path='/shop' element ={<Items />} />
+          <Route path='/*' element={<NotFound />} />
         </Route>
       </Routes>
     </HashRouter>
