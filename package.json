@@ -1,5 +1,6 @@
 {
   "name": "w2w-wallpapers",
+  "homepage": "https://drew-daniels.github.io/w2w-wallpapers/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -45,6 +46,5 @@
   },
   "devDependencies": {
     "sass": "^1.50.0"
-  },
-  "homepage": "https://drew-daniels.github.io/w2w-wallpapers"
+  }
 }
