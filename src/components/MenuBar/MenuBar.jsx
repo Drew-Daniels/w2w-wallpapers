@@ -37,7 +37,7 @@ export function MenuBar(props) {
     const navigate = useNavigate();
 
     return (
-        <Container className='d-flex flex-column sticky-top my-3 py-3' style={{ backgroundColor: 'rgb(0, 30, 60)', borderRadius: '.25em', border: '1px solid rgb(19, 47, 76)' }} >
+        <Container className='d-flex flex-column sticky-top my-3 py-3' style={{ backgroundColor: 'rgb(0, 30, 60)', borderRadius: '.25em', border: '1px solid rgb(19, 47, 76)', top: '0.5em' }} >
             <Row>
                 <ButtonGroup vertical>
                     {/* Routes */}
