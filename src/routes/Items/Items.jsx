@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { Container } from 'react-bootstrap';
 import { useOutletContext, useSearchParams, } from 'react-router-dom';
 import { Item } from '../Item/Item';
+import { NotFound } from '../NotFound/NotFound';
 
 // import styling
 import './Items.css';
@@ -22,6 +23,7 @@ export function Items(props) {
 
     return (
         <Container fluid className='mt-2 d-flex flex-column'>
+            {displayItems.length === 0 && <NotFound />}
             {displayItems
                 .map((shopItem, i) => {
                     return (

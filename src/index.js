@@ -5,6 +5,7 @@ import App from './App';
 import { SiteReviews } from './routes/SiteReviews/SiteReviews'
 import {Items} from './routes/Items/Items';
 import {Item} from './routes/Item/Item';
+import {NotFound} from './routes/NotFound/NotFound';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -14,7 +15,7 @@ root.render(
         <Route path ='/' element={<App /> }>
           <Route index element={<SiteReviews />} />
           <Route path='shop' element ={<Items />} />
-          <Route path='shop/:id' element={<Item /> }/>
+          <Route path='*' element={<NotFound />} />
         </Route>
       </Routes>
     </BrowserRouter>

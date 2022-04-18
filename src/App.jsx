@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import { Outlet } from 'react-router-dom';
+import { Banner } from './components/Banner/Banner';
 import { MenuBar } from './components/MenuBar/MenuBar';
 import { Cart } from './components/Cart/Cart';
 import { Footer } from './components/Footer/Footer';
@@ -62,14 +63,17 @@ function App() {
 
   return (
     <Container fluid className='content-container min-vh-100' style={{ backgroundColor: ' rgb(0, 30, 60)'}} >
-      <Container className='d-flex flex-column'>
+      <Container className='d-flex flex-column flex-grow-1'>
+        <Row>
+          <Banner 
+            cart={cart}
+            handleShowCart={handleShowCart}
+            handleHideCart={handleHideCart}
+          />
+        </Row>
         <Row>
           <Col md={3}>
-            <MenuBar 
-              shopItems={shopItems}
-              handleShowCart={handleShowCart}
-              cart={cart}
-            />
+            <MenuBar />
           </Col>
           <Col className='mt-2 d-flex flex-column justify-content-center'>
             <Outlet 
